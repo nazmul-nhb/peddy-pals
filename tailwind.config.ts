@@ -8,7 +8,9 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: {},
+			colors: {
+				"peddy-primary": "#fff000",
+			},
 		},
 	},
 	plugins: [],
