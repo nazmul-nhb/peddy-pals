@@ -1,30 +1,44 @@
-export interface Pet {
+export type TCategory = "Cat" | "Dog" | "Rabbit" | "Bird";
+
+export interface ICategory {
+	id: number;
+	category: TCategory;
+	category_icon: string;
+}
+
+export interface IPet {
 	petId: number;
-	breed: string;
-	category: "Cat" | "Dog" | "Rabbit" | "Bird";
+	breed?: string;
+	category: TCategory;
 	date_of_birth: string;
 	price: number;
 	image: string;
 	gender: "Male" | "Female";
 	pet_details: string;
-	vaccinated_status: "Fully" | "Not" | null;
+	vaccinated_status?: "Fully" | "Not" | null;
 	pet_name: string;
 }
 
-export interface PetsResponse {
+export interface IPetsRes {
 	status: boolean;
 	message: string;
-	pets: Pet[];
+	pets: IPet[];
 }
 
-export interface PetResponse {
+export interface IPetRes {
 	status: boolean;
 	message: string;
-	petData: Pet;
+	petData: IPet;
 }
 
-export interface CategoryResponse {
+export interface ICategoryOnlyRes {
 	status: boolean;
 	message: string;
-	data: Pet[];
+	categories: ICategory[];
+}
+
+export interface ICategoryWithPetsRes {
+	status: boolean;
+	message: string;
+	data: IPet[];
 }
