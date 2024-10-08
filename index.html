@@ -19,11 +19,11 @@
 					<h1 class="text-3xl font-bold">Peddy Pals</h1>
 				</figure>
 				<ul
-					class="absolute md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-center gap-2 md:gap-8 text-gray-600"
+					class="absolute -left-full md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-center gap-2 md:gap-8 text-gray-600"
 				>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Shop</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#best-friend">Shop</a></li>
+					<li><a href="#footer">Contact</a></li>
 				</ul>
 				<button><i class="fa-regular fa-user"></i></button>
 			</nav>
@@ -57,7 +57,7 @@
 			<!-- Best Friend Section -->
 			<section id="best-friend" class="text-center space-y-6">
 				<h2 class="text-2xl font-semibold">Adopt Your Best Friend</h2>
-				<p class="w-2/4 mx-auto">
+				<p class="w-4/5 md:w-3/4 lg:w-3/5 xl:w-1/2 mx-auto">
 					At Peddy Pals, adopting a pet means gaining a loyal
 					companion who will fill your life with love and joy. Every
 					animal in our care has a unique story and personality, just
@@ -79,8 +79,16 @@
 					<button id="sort">Sort by Price</button>
 				</div>
 
+				<!-- Loading Spinner -->
+				<div
+					id="loading-spinner"
+					class="hidden w-16 h-16 rounded-full border-8 border-gray-700/30 border-t-peddy-primary my-6 mx-auto items-center justify-center"
+				></div>
+
 				<!-- The Pets Cards & Liked Pets -->
-				<div class="flex flex-col lg:flex-row gap-6 text-left">
+				<div
+					class="flex flex-col lg:flex-row gap-6 text-left min-h-[50vh]"
+				>
 					<div
 						id="pets-container"
 						class="lg:w-3/4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -95,9 +103,7 @@
 				<div
 					id="modal-content"
 					class="modal-content bg-white mx-auto p-6 flex flex-col items-center justify-between gap-5 rounded-lg w-full sm:w-4/5 md:w-3/5 lg:w-1/2 xl:w-2/5 overflow-y-auto"
-				>
-					
-				</div>
+				></div>
 			</div>
 		</main>
 		<script type="module" src="/src/main.ts"></script>

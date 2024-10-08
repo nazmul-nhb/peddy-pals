@@ -1,8 +1,21 @@
 import type { TCategory } from "../types/types";
 import { fetchPetsByCategory } from "../utilities/fetchData";
+import { getElementById } from "../utilities/utilities";
 import { displayAllPets } from "./displayAllPets";
+import { setIsLoading } from "./loadingSpinner";
 
 export const loadPetsByCategory = async (category: TCategory) => {
+	setIsLoading(true);
+
+	const petsContainer = getElementById("pets-container");
+
+	if (petsContainer) {
+		petsContainer.innerHTML = "";
+	}
+
 	const pets = await fetchPetsByCategory(category);
-	displayAllPets(pets);
+
+	setTimeout(() => {
+		displayAllPets(pets);
+	}, 2000);
 };

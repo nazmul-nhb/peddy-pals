@@ -2,6 +2,7 @@ import type { IPet } from "../types/interfaces";
 import { sortPetsByPrice } from "../utilities/sortPets";
 import { getElementById } from "../utilities/utilities";
 import { displaySinglePet } from "./displaySinglePet";
+import { setIsLoading } from "./loadingSpinner";
 
 export const displayAllPets = (pets: IPet[]) => {
 	const petsContainer = getElementById("pets-container");
@@ -19,13 +20,14 @@ export const displayAllPets = (pets: IPet[]) => {
 		} else {
 			sortButton.innerText = "Price High to Low";
 		}
-
+        setIsLoading(true);
 		// Re-display pets after sorting
 		renderPets(sortedPets);
 	});
-
+    
 	// Function to render pets
 	const renderPets = (petsList: IPet[]) => {
+        setIsLoading(true);
 		if (petsContainer) {
 			petsContainer.innerHTML = "";
 
@@ -53,7 +55,9 @@ export const displayAllPets = (pets: IPet[]) => {
 								breed || "Unknown"
 							}</span></h5>
 							<h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-								date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"
+								date_of_birth
+									? new Date(date_of_birth).toDateString()
+									: "Unknown"
 							}</span></h5>
 							<h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
 							<h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
@@ -78,6 +82,7 @@ export const displayAllPets = (pets: IPet[]) => {
 					displaySinglePet(petId);
 				});
 			});
+			setIsLoading(false);
 		}
 	};
 

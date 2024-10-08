@@ -45,3 +45,18 @@ html {
 	transform: scale(0);
 	opacity: 0;
 }
+
+/* Loading Spinner */
+#loading-spinner{
+	animation: spin 1.5s linear infinite;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
