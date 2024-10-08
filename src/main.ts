@@ -1,5 +1,5 @@
 import "./style.css";
-import { TCategory } from "./types/interfaces";
+import type { TCategory } from "./types/types";
 import {
 	fetchAllCategories,
 	fetchAllPets,
@@ -18,7 +18,7 @@ const displayAllPets = async () => {
 
 const displaySinglePet = async (id: number) => {
 	const pet = await fetchPetById(id);
-	// console.log(pet);
+	console.log(pet);
 };
 
 const displayAllCategories = async () => {

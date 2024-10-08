@@ -1,4 +1,4 @@
-export type TCategory = "Cat" | "Dog" | "Rabbit" | "Bird";
+import { TCategory } from "./types";
 
 export interface ICategory {
 	id: number;
