@@ -36,7 +36,9 @@ export const displaySinglePet = async (id: number) => {
 						date_of_birth || "Unknown"
 					}</span></h5>
                     <h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
-                    <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${price}</span></h5>
+                    <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
+						price || "Negotiable"
+					}</span></h5>
                     <h5><i class="fa-solid fa-syringe"></i> <span>Vaccination Status: ${
 						vaccinated_status || "Not"
 					} Vaccinated</span></h5>

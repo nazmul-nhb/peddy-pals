@@ -10,5 +10,6 @@ const loadAllPets = async () => {
 	displayAllPets(pets);
 };
 
-loadAllPets();
 displayAllCategories();
+
+loadAllPets();
