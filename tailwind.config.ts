@@ -9,7 +9,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				"peddy-primary": "#fff000",
+				"peddy-primary": "#0D7981",
 			},
 			fontFamily: {
 				kreonSerif: '"Kreon", serif;',
