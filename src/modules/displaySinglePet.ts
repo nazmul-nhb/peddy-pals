@@ -33,7 +33,7 @@ export const displaySinglePet = async (id: number) => {
 						breed || "Unknown"
 					}</span></h5>
                     <h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-						date_of_birth || "Unknown"
+						date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"
 					}</span></h5>
                     <h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
                     <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${

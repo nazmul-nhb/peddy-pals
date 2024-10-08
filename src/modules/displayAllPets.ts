@@ -14,6 +14,12 @@ export const displayAllPets = (pets: IPet[]) => {
 		const sortedPets = sortPetsByPrice(pets, ascending);
 		ascending = !ascending; // Toggle for next click
 
+		if (ascending) {
+			sortButton.innerText = "Price Low to High";
+		} else {
+			sortButton.innerText = "Price High to Low";
+		}
+
 		// Re-display pets after sorting
 		renderPets(sortedPets);
 	});
@@ -47,7 +53,7 @@ export const displayAllPets = (pets: IPet[]) => {
 								breed || "Unknown"
 							}</span></h5>
 							<h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-								date_of_birth || "Unknown"
+								date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"
 							}</span></h5>
 							<h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
 							<h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
