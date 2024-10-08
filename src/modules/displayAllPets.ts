@@ -1,5 +1,6 @@
 import type { IPet } from "../types/interfaces";
 import { getElementById } from "../utilities/utilities";
+import { displaySinglePet } from "./displaySinglePet";
 
 export const displayAllPets = (pets: IPet[]) => {
 	const petsContainer = getElementById("pets-container");
@@ -8,7 +9,15 @@ export const displayAllPets = (pets: IPet[]) => {
 		petsContainer.innerHTML = "";
 
 		pets.forEach((pet) => {
-			const { petId, image, pet_name, breed, date_of_birth, gender, price } = pet;
+			const {
+				petId,
+				image,
+				pet_name,
+				breed,
+				date_of_birth,
+				gender,
+				price,
+			} = pet;
 			const petDiv = document.createElement("div");
 
 			petDiv.innerHTML = `
@@ -18,7 +27,9 @@ export const displayAllPets = (pets: IPet[]) => {
                     </figure>
                     <h4>${pet_name}</h4>
                     <div class="space-y-2">
-                        <h5><i class="fa-solid fa-paw"></i> <span>Breed: ${breed ||"Unknown"}</span></h5>
+                        <h5><i class="fa-solid fa-paw"></i> <span>Breed: ${
+							breed || "Unknown"
+						}</span></h5>
                         <h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${date_of_birth}</span></h5>
                         <h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
                         <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${price}</span></h5>
@@ -32,7 +43,13 @@ export const displayAllPets = (pets: IPet[]) => {
                 </div>
             `;
 
-            petsContainer.appendChild(petDiv);
+			petsContainer.appendChild(petDiv);
+
+			const detailsButton = getElementById(`details-${petId}`);
+
+			detailsButton?.addEventListener("click", () => {
+				displaySinglePet(petId);
+			});
 		});
 	}
 };

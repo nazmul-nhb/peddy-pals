@@ -80,11 +80,31 @@
 				</div>
 
 				<!-- The Pets Cards & Liked Pets -->
-				 <div class="flex flex-col lg:flex-row gap-6 text-left">
-					<div id="pets-container" class="lg:w-3/4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+				<div class="flex flex-col lg:flex-row gap-6 text-left">
+					<div
+						id="pets-container"
+						class="lg:w-3/4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+					></div>
 					<div id="liked-pets" class="lg:w-1/4 w-full"></div>
-				 </div>
+				</div>
 			</section>
+
+			<!-- Success Modal -->
+			<div id="pet-modal" class="modal items-center justify-center">
+				<!-- Modal content -->
+				<div
+					id="modal-content"
+					class="modal-content bg-white mx-auto p-6 flex flex-col items-center justify-between gap-5 rounded-lg"
+				>
+					<h3 class="font-bold text-2xl">Hello Pet!</h3>
+					<button
+						id="close-modal"
+						class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:text-white hover:bg-peddy-primary/75 transition-all duration-500"
+					>
+						Close
+					</button>
+				</div>
+			</div>
 		</main>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
