@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "../constants";
+import type { TCategory } from "../types/types";
 import type {
 	ICategory,
 	ICategoryOnlyRes,
@@ -8,7 +9,6 @@ import type {
 	IPetRes,
 	IPetsRes,
 } from "../types/interfaces";
-import { TCategory } from "../types/types";
 
 // Get all the pets data
 export const fetchAllPets = async (): Promise<IPet[]> => {

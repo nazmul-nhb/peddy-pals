@@ -11,6 +11,11 @@ export default {
 			colors: {
 				"peddy-primary": "#fff000",
 			},
+			fontFamily: {
+				kreonSerif: '"Kreon", serif;',
+				sourceSans: '"Source Sans 3", sans-serif;',
+				hallelujah: '"Gloria Hallelujah", cursive;',
+			},
 		},
 	},
 	plugins: [],

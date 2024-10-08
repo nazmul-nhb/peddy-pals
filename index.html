@@ -6,10 +6,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Peddy Pals</title>
 	</head>
-	<body class="w-full max-w-[1920px] p-8 mx-auto">
+	<body class="w-full max-w-[1920px] p-8 mx-auto font-sourceSans">
 		<!-- Header -->
 		<header>
-			<nav>Here Goes Navbar</nav>
+			<nav class="flex items-center justify-between gap-6 relative">
+				<figure class="flex items-center gap-2">
+					<img
+						class="w-7 h-6"
+						src="./src/assets/logo.webp"
+						alt="Peddy Pals Logo"
+					/>
+					<h1 class="text-3xl font-bold">Peddy Pals</h1>
+				</figure>
+				<ul
+					class="absolute md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-center gap-3"
+				>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<button><i class="fa-regular fa-user"></i></button>
+			</nav>
 		</header>
 
 		<!-- Main Contents -->
