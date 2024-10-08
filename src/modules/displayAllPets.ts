@@ -20,14 +20,14 @@ export const displayAllPets = (pets: IPet[]) => {
 		} else {
 			sortButton.innerText = "Price High to Low";
 		}
-        setIsLoading(true);
+		setIsLoading(true);
 		// Re-display pets after sorting
 		renderPets(sortedPets);
 	});
-    
+
 	// Function to render pets
 	const renderPets = (petsList: IPet[]) => {
-        setIsLoading(true);
+		setIsLoading(true);
 		if (petsContainer) {
 			petsContainer.innerHTML = "";
 
@@ -49,18 +49,18 @@ export const displayAllPets = (pets: IPet[]) => {
 						<figure>
 							<img class="w-80 h-48 rounded-lg" src="${image}" alt="${pet_name}" />
 						</figure>
-						<h4>${pet_name}</h4>
-						<div class="space-y-2">
-							<h5><i class="fa-solid fa-paw"></i> <span>Breed: ${
+						<h4 class="font-bold text-xl">${pet_name}</h4>
+						<div class="text-gray-500 space-y-2">
+							<h5 class="flex items-center gap-2"><i class="fa-solid fa-paw"></i> <span>Breed: ${
 								breed || "Unknown"
 							}</span></h5>
-							<h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
+							<h5 class="flex items-center gap-2"><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
 								date_of_birth
 									? new Date(date_of_birth).toDateString()
 									: "Unknown"
 							}</span></h5>
-							<h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
-							<h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
+							<h5 class="flex items-center gap-2"><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
+							<h5 class="flex items-center gap-2"><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
 								price || "Negotiable"
 							}</span></h5>
 						</div>

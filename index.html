@@ -40,7 +40,7 @@
 					Your Path to Adoption Starts Here
 				</h1>
 				<a
-					class="bg-peddy-primary px-8 py-4 inline-block rounded-xl text-white text-2xl font-bold"
+					class="bg-peddy-primary border border-peddy-primary text-white hover:bg-peddy-primary/20 hover:text-peddy-primary px-8 py-4 inline-block rounded-xl text-2xl font-bold transition-all duration-500"
 					href="#best-friend"
 				>
 					View More
@@ -74,9 +74,14 @@
 				></div>
 
 				<!-- Sort By Price Button -->
-				<div class="flex justify-between">
-					<h3>Best Deals for You</h3>
-					<button id="sort">Sort by Price</button>
+				<div class="flex justify-between items-center gap-5 flex-wrap">
+					<h3 class="text-2xl font-bold">Best Deals for You</h3>
+					<button
+						id="sort"
+						class="bg-peddy-primary border border-peddy-primary text-white hover:bg-peddy-primary/20 hover:text-peddy-primary px-5 py-2 inline-block rounded-xl text-lg font-semibold transition-all duration-500"
+					>
+						Sort by Price
+					</button>
 				</div>
 
 				<!-- Loading Spinner -->
@@ -87,7 +92,7 @@
 
 				<!-- The Pets Cards & Liked Pets -->
 				<div
-					class="flex flex-col lg:flex-row gap-6 text-left min-h-[50vh]"
+					class="flex flex-col lg:flex-row gap-6 text-left min-h-[75vh]"
 				>
 					<div
 						id="pets-container"

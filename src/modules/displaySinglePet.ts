@@ -18,33 +18,36 @@ export const displaySinglePet = async (id: number) => {
 
 	const petModal = getElementById("pet-modal");
 	const modalContent = getElementById("modal-content");
+	const body = document.querySelector("body");
 
 	if (petModal && modalContent) {
 		petModal.style.display = "flex";
 
 		modalContent.innerHTML = `
-             <div class="bg-peddy-primary/5 space-y-5">
+             <div class="bg-peddy-primary/5 space-y-4">
                     <figure>
                     <image class="w-full aspect-[1.6] rounded-lg" src="${image}" alt="${pet_name}" />
                 </figure>
-                <h4>${pet_name}</h4>
-                <div class="space-y-2">
-                    <h5><i class="fa-solid fa-paw"></i> <span>Breed: ${
+                <h4 class="font-bold text-xl">${pet_name}</h4>
+                <div class="text-gray-500 grid grid-cols-2">
+                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-paw"></i> <span>Breed: ${
 						breed || "Unknown"
 					}</span></h5>
-                    <h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-						date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"
+                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
+						date_of_birth
+							? new Date(date_of_birth).toDateString()
+							: "Unknown"
 					}</span></h5>
-                    <h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
-                    <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
+                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
+                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
 						price || "Negotiable"
 					}</span></h5>
-                    <h5><i class="fa-solid fa-syringe"></i> <span>Vaccination Status: ${
+                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-syringe"></i> <span>Vaccination Status: ${
 						vaccinated_status || "Not"
-					} Vaccinated</span></h5>
+					}</span></h5>
                 </div>
                 <hr/>
-                <h3>Details Information</h3>
+                <h3 class="font-semibold text-lg">Details Information</h3>
                 <p class="text-gray-700">
                     ${pet_details}
                 </p>
@@ -60,6 +63,7 @@ export const displaySinglePet = async (id: number) => {
 		// Open the modal with animation
 		setTimeout(() => {
 			petModal.classList.add("show");
+			body?.classList.add("overflow-hidden");
 		}, 10);
 
 		const closeButton = getElementById(`close-${petId}`);
@@ -74,6 +78,7 @@ export const displaySinglePet = async (id: number) => {
 				setTimeout(() => {
 					petModal.style.display = "none";
 					petModal.classList.remove("close");
+					body?.classList.remove("overflow-hidden");
 				}, 500);
 			};
 		}
@@ -87,6 +92,7 @@ export const displaySinglePet = async (id: number) => {
 				setTimeout(() => {
 					petModal.style.display = "none";
 					petModal.classList.remove("close");
+					body?.classList.remove("overflow-hidden");
 				}, 500);
 			}
 		};
