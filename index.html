@@ -46,19 +46,45 @@
 					View More
 				</a>
 				<figure class="w-full">
-					<img class="mx-auto " src="./src/assets/pet.webp" alt="Pets">
+					<img
+						class="mx-auto"
+						src="./src/assets/pet.webp"
+						alt="Pets"
+					/>
 				</figure>
 			</section>
 
 			<!-- Best Friend Section -->
-			 <section class="text-center space-y-6">
+			<section class="text-center space-y-6">
 				<h2 class="text-2xl font-semibold">Adopt Your Best Friend</h2>
-				<p class="w-2/4 mx-auto">At Peddy Pals, adopting a pet means gaining a loyal companion who will fill your life with love and joy. Every animal in our care has a unique story and personality, just waiting to be part of your family. By choosing to adopt, you’re giving a homeless pet a second chance and making a lasting impact in their life. Explore our available pets today and find your perfect match!</p>
+				<p class="w-2/4 mx-auto">
+					At Peddy Pals, adopting a pet means gaining a loyal
+					companion who will fill your life with love and joy. Every
+					animal in our care has a unique story and personality, just
+					waiting to be part of your family. By choosing to adopt,
+					you’re giving a homeless pet a second chance and making a
+					lasting impact in their life. Explore our available pets
+					today and find your perfect match!
+				</p>
 
-				<div id="categories" class="flex items-center justify-around gap-4 flex-wrap">
+				<!-- Display Categories -->
+				<div
+					id="categories"
+					class="flex items-center justify-around gap-4 flex-wrap"
+				></div>
 
+				<!-- Sort By Price Button -->
+				<div class="flex justify-between">
+					<h3>Best Deals for You</h3>
+					<button>Sort by Price</button>
 				</div>
-			 </section>
+
+				<!-- The Pets Cards & Liked Pets -->
+				 <div class="flex flex-col lg:flex-row gap-6 text-left">
+					<div id="pets-container" class="lg:w-3/4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+					<div id="liked-pets" class="lg:w-1/4 w-full"></div>
+				 </div>
+			</section>
 		</main>
 		<script type="module" src="/src/main.ts"></script>
 	</body>

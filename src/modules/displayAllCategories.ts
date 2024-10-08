@@ -2,10 +2,9 @@ import { fetchAllCategories } from "../utilities/fetchData";
 import { getElementById } from "../utilities/utilities";
 import { loadPetsByCategory } from "./loadPetsByCategory";
 
-const categoriesContainer = getElementById("categories");
-
 export const displayAllCategories = async () => {
-	const categories = await fetchAllCategories();
+    const categories = await fetchAllCategories();
+    const categoriesContainer = getElementById("categories");
 
 	if (categoriesContainer) {
 		categoriesContainer.innerHTML = "";
