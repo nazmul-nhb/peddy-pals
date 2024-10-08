@@ -10,12 +10,12 @@ export interface IPet {
 	petId: number;
 	breed?: string;
 	category: TCategory;
-	date_of_birth: string;
+	date_of_birth?: string | null;
 	price: number;
 	image: string;
 	gender: "Male" | "Female";
 	pet_details: string;
-	vaccinated_status?: "Fully" | "Not" | null;
+	vaccinated_status?: "Fully" | "Partially" | "Not" | null;
 	pet_name: string;
 }
 

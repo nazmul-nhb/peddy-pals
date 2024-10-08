@@ -30,7 +30,9 @@ export const displayAllPets = (pets: IPet[]) => {
                         <h5><i class="fa-solid fa-paw"></i> <span>Breed: ${
 							breed || "Unknown"
 						}</span></h5>
-                        <h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${date_of_birth}</span></h5>
+                        <h5><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
+							date_of_birth || "Unknown"
+						}</span></h5>
                         <h5><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
                         <h5><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${price}</span></h5>
                     </div>
