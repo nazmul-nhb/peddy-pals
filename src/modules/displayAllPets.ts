@@ -5,6 +5,7 @@ import {
 } from "../utilities/localStorage";
 import { sortPetsByPrice } from "../utilities/sortPets";
 import { getElementById } from "../utilities/utilities";
+import { displayAdoptionMsg } from "./displayAdoptionMsg";
 import { displayLikedPets } from "./displayLikedPets";
 import { displaySinglePet } from "./displaySinglePet";
 import { setIsLoading } from "./loadingSpinner";
@@ -142,6 +143,7 @@ export const displayAllPets = (pets: IPet[]) => {
 						if (countDown < 0) {
 							clearInterval(countDownInterval);
 							adoptButton.innerText = "Adopted";
+							displayAdoptionMsg(petId, pet_name);
 							adoptButton.setAttribute("disabled", "true");
 						}
 					}, 1000);
