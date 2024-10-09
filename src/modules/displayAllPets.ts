@@ -1,4 +1,8 @@
 import type { IPet } from "../types/interfaces";
+import {
+	getFromLocalStorage,
+	saveToLocalStorage,
+} from "../utilities/localStorage";
 import { sortPetsByPrice } from "../utilities/sortPets";
 import { getElementById } from "../utilities/utilities";
 import { displaySinglePet } from "./displaySinglePet";
@@ -66,7 +70,9 @@ export const displayAllPets = (pets: IPet[]) => {
 						</div>
 						<hr/>
 						<div class="flex justify-around items-center">
-							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="like-${petId}"><i class="fa-regular fa-thumbs-up"></i></button>
+							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="like-${petId}">
+								<span id="likes-${petId}" class="pr-1"> </span><i class="fa-regular fa-thumbs-up"></i>
+							</button>
 							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="adopt-${petId}">Adopt</button>
 							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="details-${petId}">Details</button>
 						</div>
@@ -80,6 +86,29 @@ export const displayAllPets = (pets: IPet[]) => {
 
 				detailsButton?.addEventListener("click", () => {
 					displaySinglePet(petId);
+				});
+
+				// Attach the click event for the details button
+				const likeButton = getElementById(`like-${petId}`);
+				const likes = getElementById(`likes-${petId}`);
+
+				const savedInfo = getFromLocalStorage();
+
+				const likeInfo = savedInfo.find((info) => info.petId === petId);
+
+				if (likes) {
+					likes.innerText = likeInfo ? likeInfo?.like.toString() : "";
+				}
+
+				let like = likeInfo ? likeInfo?.like : 0;
+
+				likeButton?.addEventListener("click", () => {
+					like++;
+
+					if (likes) {
+						likes.innerText = like.toString();
+						saveToLocalStorage({ petId, like });
+					}
 				});
 			});
 			setIsLoading(false);

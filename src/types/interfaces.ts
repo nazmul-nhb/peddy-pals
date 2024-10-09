@@ -42,3 +42,8 @@ export interface ICategoryWithPetsRes {
 	message: string;
 	data: IPet[];
 }
+
+export interface ILikesData {
+	petId: number;
+	like: number;
+}
