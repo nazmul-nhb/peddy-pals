@@ -17,5 +17,5 @@ export const loadPetsByCategory = async (category: TCategory) => {
 
 	setTimeout(() => {
 		displayAllPets(pets);
-	}, 2000);
+	}, 1200);
 };

@@ -12,7 +12,7 @@ const loadAllPets = async () => {
 
 	setTimeout(() => {
 		displayAllPets(pets);
-	}, 2000);
+	}, 1200);
 };
 
 loadAllPets();
