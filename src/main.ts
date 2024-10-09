@@ -4,6 +4,7 @@ import { fetchAllPets } from "./utilities/fetchData";
 import { displayAllPets } from "./modules/displayAllPets";
 import { displayAllCategories } from "./modules/displayAllCategories";
 import { setIsLoading } from "./modules/loadingSpinner";
+import { displayLikedPets } from "./modules/displayLikedPets";
 
 const loadAllPets = async () => {
 	setIsLoading(true);
@@ -14,6 +15,8 @@ const loadAllPets = async () => {
 	}, 2000);
 };
 
+loadAllPets();
+
 displayAllCategories();
 
-loadAllPets();
+displayLikedPets();

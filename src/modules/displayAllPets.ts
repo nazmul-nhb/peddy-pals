@@ -5,6 +5,7 @@ import {
 } from "../utilities/localStorage";
 import { sortPetsByPrice } from "../utilities/sortPets";
 import { getElementById } from "../utilities/utilities";
+import { displayLikedPets } from "./displayLikedPets";
 import { displaySinglePet } from "./displaySinglePet";
 import { setIsLoading } from "./loadingSpinner";
 
@@ -106,6 +107,7 @@ export const displayAllPets = (pets: IPet[]) => {
 
 						likes.innerText = like.toString();
 						saveToLocalStorage({ petId, like });
+						displayLikedPets();
 					});
 				}
 			});

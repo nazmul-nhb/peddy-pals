@@ -47,3 +47,10 @@ export interface ILikesData {
 	petId: number;
 	like: number;
 }
+
+export interface ILikedPet {
+	petId: number;
+	pet_name: string;
+	image: string;
+	like: number;
+}
