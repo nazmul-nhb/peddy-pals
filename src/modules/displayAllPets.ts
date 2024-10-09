@@ -36,6 +36,29 @@ export const displayAllPets = (pets: IPet[]) => {
 		if (petsContainer) {
 			petsContainer.innerHTML = "";
 
+			// Display Error Message if there is no Data
+			if (!petsList.length) {
+				const errorContainer = document.createElement("div");
+
+				errorContainer.classList.add(
+					"w-full",
+					"col-span-1",
+					"md:col-span-2",
+					"lg:col-span-3"
+				);
+
+				errorContainer.innerHTML = `
+					<figure class="flex flex-col items-center justify-center h-[75vh]">
+						<image src="/src/assets/error.webp" alt="Error" />
+						<h3 class="text-2xl font-bold font-kreonSerif text-peddy-primary">No Information Available</h3>
+					</figure>
+				`;
+
+				petsContainer.appendChild(errorContainer);
+				setIsLoading(false);
+				return;
+			}
+
 			petsList.forEach((pet) => {
 				const {
 					petId,
