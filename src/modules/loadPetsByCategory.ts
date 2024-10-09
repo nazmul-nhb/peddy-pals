@@ -2,7 +2,7 @@ import type { TCategory } from "../types/types";
 import { fetchPetsByCategory } from "../utilities/fetchData";
 import { getElementById } from "../utilities/utilities";
 import { displayAllPets } from "./displayAllPets";
-import { setIsLoading } from "./loadingSpinner";
+import { setIsLoading } from "./displayLoading";
 
 export const loadPetsByCategory = async (category: TCategory) => {
 	setIsLoading(true);

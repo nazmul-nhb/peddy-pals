@@ -8,7 +8,7 @@ import { getElementById } from "../utilities/utilities";
 import { displayAdoptionMsg } from "./displayAdoptionMsg";
 import { displayLikedPets } from "./displayLikedPets";
 import { displaySinglePet } from "./displaySinglePet";
-import { setIsLoading } from "./loadingSpinner";
+import { setIsLoading } from "./displayLoading";
 
 export const displayAllPets = (pets: IPet[]) => {
 	const petsContainer = getElementById("pets-container");
@@ -26,6 +26,7 @@ export const displayAllPets = (pets: IPet[]) => {
 		} else {
 			sortButton.innerText = "Price High to Low";
 		}
+
 		setIsLoading(true);
 		// Re-display pets after sorting
 		renderPets(sortedPets);
