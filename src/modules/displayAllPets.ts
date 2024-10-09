@@ -120,14 +120,37 @@ export const displayAllPets = (pets: IPet[]) => {
 
 				petsContainer.appendChild(petDiv);
 
-				// Attach the click event for the details button
+				// Details Button
 				const detailsButton = getElementById(`details-${petId}`);
 
+				// Attach the click event for the details button
 				detailsButton?.addEventListener("click", () => {
 					displaySinglePet(petId);
 				});
 
+				// Adopt Button
+				const adoptButton = getElementById(`adopt-${petId}`);
+
+				adoptButton?.addEventListener("click", () => {
+					let countDown = 3;
+
+					const countDownInterval = setInterval(() => {
+						adoptButton.innerText = `Wait... ${countDown.toString()}`;
+						countDown -= 1;
+
+						if (countDown < 0) {
+							clearInterval(countDownInterval);
+							adoptButton.innerText = "Adopted";
+						}
+					}, 1000);
+				});
+
 				// Attach the click event for the details button
+				detailsButton?.addEventListener("click", () => {
+					displaySinglePet(petId);
+				});
+
+				// Like Button
 				const likeButton = getElementById(`like-${petId}`);
 				const likes = getElementById(`likes-${petId}`);
 
@@ -140,6 +163,7 @@ export const displayAllPets = (pets: IPet[]) => {
 				if (likes) {
 					likes.innerText = like > 0 ? like.toString() : "";
 
+					// Attach the click event for the like button
 					likeButton?.addEventListener("click", () => {
 						like++;
 
@@ -149,6 +173,7 @@ export const displayAllPets = (pets: IPet[]) => {
 					});
 				}
 			});
+
 			setIsLoading(false);
 		}
 	};
