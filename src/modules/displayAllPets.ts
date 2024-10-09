@@ -131,6 +131,7 @@ export const displayAllPets = (pets: IPet[]) => {
 				// Adopt Button
 				const adoptButton = getElementById(`adopt-${petId}`);
 
+				// Attach the click event for the adopt button
 				adoptButton?.addEventListener("click", () => {
 					let countDown = 3;
 
@@ -141,6 +142,7 @@ export const displayAllPets = (pets: IPet[]) => {
 						if (countDown < 0) {
 							clearInterval(countDownInterval);
 							adoptButton.innerText = "Adopted";
+							adoptButton.setAttribute("disabled", "true");
 						}
 					}, 1000);
 				});
