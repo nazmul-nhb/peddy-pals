@@ -45,7 +45,7 @@ export const displayAllPets = (pets: IPet[]) => {
 					"w-full",
 					"col-span-1",
 					"md:col-span-2",
-					"lg:col-span-3"
+					"xl:col-span-3"
 				);
 
 				errorContainer.innerHTML = `
@@ -104,7 +104,7 @@ export const displayAllPets = (pets: IPet[]) => {
 								<span id="likes-${petId}" class="pr-1"> </span><i class="fa-regular fa-thumbs-up"></i>
 							</button>
 							<button
-								class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:bg-peddy-primary/90 hover:text-white transition-all duration-500"
+								class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:bg-peddy-primary/90 hover:text-white transition-all duration-500 disabled:cursor-not-allowed disabled:text-red-800 disabled:bg-red-800/10 disabled:border-red-800/75"
 								id="adopt-${petId}"
 							>
 								Adopt
