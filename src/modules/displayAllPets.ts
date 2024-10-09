@@ -96,20 +96,18 @@ export const displayAllPets = (pets: IPet[]) => {
 
 				const likeInfo = savedInfo.find((info) => info.petId === petId);
 
-				if (likes) {
-					likes.innerText = likeInfo ? likeInfo?.like.toString() : "";
-				}
-
 				let like = likeInfo ? likeInfo?.like : 0;
 
-				likeButton?.addEventListener("click", () => {
-					like++;
+				if (likes) {
+					likes.innerText = like > 0 ? like.toString() : "";
 
-					if (likes) {
+					likeButton?.addEventListener("click", () => {
+						like++;
+
 						likes.innerText = like.toString();
 						saveToLocalStorage({ petId, like });
-					}
-				});
+					});
+				}
 			});
 			setIsLoading(false);
 		}
