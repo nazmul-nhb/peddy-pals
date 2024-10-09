@@ -17,8 +17,8 @@ export const displayAllCategories = async () => {
 			const categoriesDiv = document.createElement("div");
 
 			categoriesDiv.innerHTML = `
-				<button id="category-${id}" class="flex gap-6 items-center justify-between text-xl font-bold border border-peddy-primary/50 bg-peddy-primary/5 rounded-full text-peddy-primary px-8 py-3 hover:text-white hover:bg-peddy-primary/75 transition-all duration-500">
-					<image class="w-10" src="${category_icon} alt="${category}" />
+				<button id="category-${id}" class="flex gap-2 md:gap-6 items-center justify-between text-xl font-bold border border-peddy-primary/50 bg-peddy-primary/5 rounded-full text-peddy-primary px-4 py-1.5 md:px-8 md:py-3 hover:text-white hover:bg-peddy-primary/75 transition-all duration-500">
+					<image class="md:w-7 md:h-8 w-4 h-5" src="${category_icon} alt="${category}" />
 					<span>${category}</span>
 				</button/>
 			`;
