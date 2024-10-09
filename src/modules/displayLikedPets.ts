@@ -2,6 +2,7 @@ import type { ILikedPet } from "../types/interfaces";
 import { fetchAllPets } from "../utilities/fetchData";
 import { getFromLocalStorage } from "../utilities/localStorage";
 import { getElementById } from "../utilities/utilities";
+import { displaySinglePet } from "./displaySinglePet";
 
 export const displayLikedPets = async () => {
 	const pets = await fetchAllPets();
@@ -27,24 +28,32 @@ export const displayLikedPets = async () => {
 		likesContainer.innerHTML = "";
 
 		likedPets.forEach((pet) => {
+			const { petId, image, pet_name, like } = pet;
 			const likedDiv = document.createElement("div");
 
 			likedDiv.innerHTML = `
                 <figure>
                     <image
-                        class="aspect-[1.6] border border-peddy-primary/25 p-1 rounded-lg"
-                        src="${pet.image}"
-                        alt="${pet.pet_name}"
+                        class="aspect-[1.6] border border-peddy-primary/25 p-1 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"
+						id="liked-${petId}"
+                        src="${image}"
+                        alt="${pet_name}"
                     />
                     <h4 class="text-peddy-primary px-2 font-semibold flex items-center gap-2">
-                        ${pet.like}
+                        ${like}
                         <i class="fa-regular fa-thumbs-up"></i>
-                        ${pet.pet_name}
+                        ${pet_name}
                     </h4>
                 </figure>
             `;
 
 			likesContainer.appendChild(likedDiv);
+
+			const imageButton = getElementById(`liked-${petId}`);
+
+			imageButton?.addEventListener("click", () => {
+				displaySinglePet(petId);
+			});
 		});
 	}
 };

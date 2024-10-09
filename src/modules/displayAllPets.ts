@@ -71,11 +71,24 @@ export const displayAllPets = (pets: IPet[]) => {
 						</div>
 						<hr/>
 						<div class="flex justify-around items-center">
-							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="like-${petId}">
+							<button
+								class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:bg-peddy-primary/90 hover:text-white transition-all duration-500"
+								id="like-${petId}"
+							>
 								<span id="likes-${petId}" class="pr-1"> </span><i class="fa-regular fa-thumbs-up"></i>
 							</button>
-							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="adopt-${petId}">Adopt</button>
-							<button class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5" id="details-${petId}">Details</button>
+							<button
+								class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:bg-peddy-primary/90 hover:text-white transition-all duration-500"
+								id="adopt-${petId}"
+							>
+								Adopt
+							</button>
+							<button
+								class="border border-peddy-primary/75 bg-peddy-primary/10 rounded-md text-peddy-primary text-lg font-bold px-3 py-1.5 hover:bg-peddy-primary/90 hover:text-white transition-all duration-500"
+								id="details-${petId}"
+							>
+								Details
+							</button>
 						</div>
 					</div>
 				`;
