@@ -31,9 +31,16 @@ export const displayLikedPets = async () => {
 
 			likedDiv.innerHTML = `
                 <figure>
-                    <image src="${pet.image}" alt="${pet.pet_name}"/>
-                    ${pet.like} <i class="fa-regular fa-thumbs-up"></i>
-                    <h4>${pet.pet_name}</h4>
+                    <image
+                        class="aspect-[1.6] border border-peddy-primary/25 p-1 rounded-lg"
+                        src="${pet.image}"
+                        alt="${pet.pet_name}"
+                    />
+                    <h4 class="text-peddy-primary px-2 font-semibold flex items-center gap-2">
+                        ${pet.like}
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        ${pet.pet_name}
+                    </h4>
                 </figure>
             `;
 

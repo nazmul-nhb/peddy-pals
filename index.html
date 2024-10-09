@@ -92,13 +92,19 @@
 
 				<!-- The Pets Cards & Liked Pets -->
 				<div
-					class="flex flex-col lg:flex-row gap-6 text-left min-h-[75vh]"
+					class="flex flex-col justify-start items-start lg:flex-row gap-6 text-left min-h-[75vh] relative"
 				>
 					<div
 						id="pets-container"
 						class="lg:w-3/4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
 					></div>
-					<div id="liked-pets" class="lg:w-1/4 w-full"></div>
+					<div class="lg:w-1/4 w-full lg:sticky top-0 px-2 border border-peddy-primary/40 rounded-lg min-h-[75vh]">
+						<h3 class="text-xl font-semibold my-2">Pets You Liked</h3>
+						<div
+							id="liked-pets"
+							class="grid grid-cols-2 gap-3"
+						></div>
+					</div>
 				</div>
 			</section>
 
