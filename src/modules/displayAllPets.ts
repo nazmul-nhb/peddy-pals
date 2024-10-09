@@ -51,7 +51,7 @@ export const displayAllPets = (pets: IPet[]) => {
 
 				errorContainer.innerHTML = `
 					<figure class="flex flex-col items-center justify-center h-[75vh]">
-						<image src="/src/assets/error.webp" alt="Error" />
+						<image src="./src/assets/error.webp" alt="Error" />
 						<h3 class="text-2xl font-bold font-kreonSerif text-peddy-primary">
 							No Information Available!
 						</h3>

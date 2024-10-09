@@ -35,7 +35,7 @@ export const displayLikedPets = async () => {
 
 			errorContainer.innerHTML = `
 					<figure class="flex flex-col items-start">
-						<image src="/src/assets/error.webp" alt="Error" />
+						<image src="./src/assets/error.webp" alt="Error" />
 						<h3 class="text-xl font-bold font-kreonSerif text-peddy-primary">
 							You Haven't Liked Any Pet!
 						</h3>
