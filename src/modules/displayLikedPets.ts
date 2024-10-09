@@ -27,6 +27,25 @@ export const displayLikedPets = async () => {
 	if (likesContainer) {
 		likesContainer.innerHTML = "";
 
+		// Display Error Message if there is no Data
+		if (!likedPets.length) {
+			const errorContainer = document.createElement("div");
+
+			errorContainer.classList.add("w-full", "col-span-2");
+
+			errorContainer.innerHTML = `
+					<figure class="flex flex-col items-start">
+						<image src="/src/assets/error.webp" alt="Error" />
+						<h3 class="text-xl font-bold font-kreonSerif text-peddy-primary">
+							You Haven't Liked Any Pet!
+						</h3>
+					</figure>
+				`;
+
+			likesContainer.appendChild(errorContainer);
+			return;
+		}
+
 		likedPets.forEach((pet) => {
 			const { petId, image, pet_name, like } = pet;
 			const likedDiv = document.createElement("div");

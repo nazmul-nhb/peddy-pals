@@ -50,7 +50,9 @@ export const displayAllPets = (pets: IPet[]) => {
 				errorContainer.innerHTML = `
 					<figure class="flex flex-col items-center justify-center h-[75vh]">
 						<image src="/src/assets/error.webp" alt="Error" />
-						<h3 class="text-2xl font-bold font-kreonSerif text-peddy-primary">No Information Available</h3>
+						<h3 class="text-2xl font-bold font-kreonSerif text-peddy-primary">
+							No Information Available!
+						</h3>
 					</figure>
 				`;
 
@@ -73,7 +75,7 @@ export const displayAllPets = (pets: IPet[]) => {
 				const petDiv = document.createElement("div");
 
 				petDiv.innerHTML = `
-					<div class="border border-gray-300 bg-peddy-primary/5 rounded-lg p-4 space-y-5">
+					<div class="border border-peddy-primary/25 bg-peddy-primary/5 rounded-lg p-4 space-y-5">
 						<figure>
 							<img class="w-80 h-48 rounded-lg" src="${image}" alt="${pet_name}" />
 						</figure>
