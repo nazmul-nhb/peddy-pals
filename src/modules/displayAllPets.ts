@@ -9,6 +9,7 @@ import { displayAdoptionMsg } from "./displayAdoptionMsg";
 import { displayLikedPets } from "./displayLikedPets";
 import { displaySinglePet } from "./displaySinglePet";
 import { setIsLoading } from "./displayLoading";
+import toastr from "toastr";
 
 export const displayAllPets = (pets: IPet[]) => {
 	const petsContainer = getElementById("pets-container");
@@ -145,6 +146,7 @@ export const displayAllPets = (pets: IPet[]) => {
 							clearInterval(countDownInterval);
 							adoptButton.innerText = "Adopted";
 							displayAdoptionMsg(petId, pet_name);
+							toastr.success(`You Adopted ${pet_name}!`);
 							adoptButton.setAttribute("disabled", "true");
 						}
 					}, 1000);
