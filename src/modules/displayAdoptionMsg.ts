@@ -12,7 +12,7 @@ export const displayAdoptionMsg = (petId: number, petName: string) => {
              <div class="bg-peddy-primary/5 space-y-4 text-center font-bold">
                 <h3 class="text-peddy-primary text-2xl">Congratulations!</h3>
                 <h4 class="text-peddy-primary/75 text-lg md:text-xl">
-                    You Have Successfully Adopted
+                    ✅ You Have Successfully Adopted
                     <span class="text-peddy-primary">${petName}!</span>
                 </h4>
                 <button

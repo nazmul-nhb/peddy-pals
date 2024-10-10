@@ -24,31 +24,38 @@ export const displaySinglePet = async (id: number) => {
 		petModal.style.display = "flex";
 
 		modalContent.innerHTML = `
-             <div class="bg-peddy-primary/5 space-y-4">
-                    <figure>
+             <div class="space-y-4">
+                <figure class="border border-peddy-primary/40 rounded-lg p-1">
                     <image class="w-full aspect-[1.6] rounded-lg" src="${image}" alt="${pet_name}" />
                 </figure>
                 <h4 class="font-bold text-xl">${pet_name}</h4>
-                <div class="text-gray-500 grid grid-cols-2">
-                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-paw"></i> <span>Breed: ${
-						breed || "Unknown"
-					}</span></h5>
-                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-						date_of_birth
-							? new Date(date_of_birth).toDateString()
-							: "Unknown"
-					}</span></h5>
-                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
-                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
-						price || "Negotiable"
-					}</span></h5>
-                    <h5 class="flex items-center gap-2"><i class="fa-solid fa-syringe"></i> <span>Vaccination Status: ${
-						vaccinated_status || "Not"
-					}</span></h5>
+                <div class="text-gray-500 grid md:grid-cols-2">
+                    <h5 class="flex items-center gap-2">
+						<i class="fa-solid fa-paw"></i>
+						<span>Breed: ${breed || "Unknown"}</span>
+					</h5>
+                    <h5 class="flex items-center gap-2">
+						<i class="fa-solid fa-cake-candles"></i>
+						<span>
+							Birth: ${date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"}
+						</span>
+					</h5>
+                    <h5 class="flex items-center gap-2">
+						<i class="fa-solid fa-mercury"></i>
+						<span>Gender: ${gender}</span>
+					</h5>
+                    <h5 class="flex items-center gap-2">
+						<i class="fa-solid fa-dollar-sign"></i>
+						<span>Price: ${price || "Negotiable"}</span>
+					</h5>
+                    <h5 class="flex items-center gap-2">
+						<i class="fa-solid fa-syringe"></i> 
+						<span>Vaccination Status: ${vaccinated_status || "Not"}</span>
+					</h5>
                 </div>
                 <hr/>
                 <h3 class="font-semibold text-lg">Details Information</h3>
-                <p class="text-gray-700">
+                <p class="text-gray-700 text-justify">
                     ${pet_details}
                 </p>
                 <button

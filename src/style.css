@@ -26,7 +26,7 @@ html {
 .modal-content {
 	position: relative;
 	top: 0;
-	max-height: 88vh;
+	max-height: 75vh;
 	margin: 8px;
 	box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
 	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
