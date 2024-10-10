@@ -50,7 +50,7 @@ export const displaySinglePet = async (id: number) => {
 					</h5>
                     <h5 class="flex items-center gap-2">
 						<i class="fa-solid fa-syringe"></i> 
-						<span>Vaccination: ${vaccinated_status || "Not"} Vaccinated</span>
+						<span>${vaccinated_status || "Not"} Vaccinated</span>
 					</h5>
                 </div>
                 <hr/>

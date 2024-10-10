@@ -8,8 +8,11 @@
 	</head>
 	<body class="w-full max-w-[1920px] mx-auto font-sourceSans">
 		<!-- Header -->
-		<header>
-			<nav class="flex items-center justify-between gap-6 relative p-8">
+		<header class="relative">
+			<nav
+				class="flex items-center justify-between gap-6 md:relative md:p-8 py-4 md:ml-0 ml-12"
+			>
+				<!-- Logo Section -->
 				<figure class="flex items-center gap-2">
 					<img
 						class="w-7 h-6"
@@ -22,8 +25,11 @@
 						Peddy Pals
 					</h1>
 				</figure>
+
+				<!-- Navigation Menu -->
 				<ul
-					class="font-semibold absolute -left-full md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-center gap-2 md:gap-8 text-gray-600"
+					id="nav-menu"
+					class="font-semibold bg-peddy-primary md:bg-transparent md:static md:flex md:flex-row md:items-center md:gap-8 p-4 md:p-0 flex flex-col items-center gap-2 text-gray-600 shadow-lg shadow-peddy-primary/30 rounded-lg md:shadow-none absolute top-[3.5rem] left-2 opacity-0 scale-0 transform origin-top-left transition-all duration-300 ease-out md:opacity-100 md:scale-100"
 				>
 					<li>
 						<a
@@ -47,12 +53,22 @@
 						>
 					</li>
 				</ul>
+
+				<!-- User Icon Button -->
 				<button
-					class="text-peddy-primary border border-peddy-primary/30 bg-peddy-primary/10 p-2 aspect-square w-11 rounded-full hover:bg-peddy-primary hover:text-white transition-all duration-500"
+					class="text-peddy-primary border border-peddy-primary/30 bg-peddy-primary/10 p-2 aspect-square w-10 rounded-full hover:bg-peddy-primary hover:text-white transition-all duration-500 mr-2 md:mr-0"
 				>
 					<i class="fa-regular fa-user"></i>
 				</button>
 			</nav>
+
+			<!-- Mobile Navigation Button -->
+			<button
+				id="nav-button"
+				class="p-2 rounded-full w-8 h-8 border border-peddy-primary bg-peddy-primary text-white flex items-center justify-center hover:text-peddy-primary hover:bg-white transition-all duration-500 absolute top-1/2 -translate-y-1/2 left-2 md:hidden"
+			>
+				<i class="fa-solid fa-ellipsis-vertical"></i>
+			</button>
 		</header>
 
 		<!-- Main Contents -->
@@ -247,7 +263,7 @@
 					/>
 					<button
 						id="subscribe"
-						class="bg-peddy-primary border border-peddy-primary text-white hover:bg-peddy-primary/20 hover:text-peddy-primary px-4 py-2 inline-block rounded-xl text-lg font-semibold transition-all duration-500"
+						class="bg-peddy-primary border border-peddy-primary text-white hover:bg-white hover:text-peddy-primary px-4 py-2 inline-block rounded-xl text-lg font-semibold transition-all duration-500"
 						type="submit"
 					>
 						Subscribe

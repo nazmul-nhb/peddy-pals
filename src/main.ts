@@ -26,3 +26,25 @@ subscribeButton?.addEventListener("click", (e: MouseEvent) => {
 	toastr.success("Subscribed to Newsletter!");
 	emailInput.value = "";
 });
+
+// Navbar Toggle for Small Devices
+const navMenu = getElementById("nav-menu");
+const navButton = getElementById("nav-button");
+
+if (navMenu && navButton) {
+	navButton.addEventListener("click", () => {
+		// Get button coordinates to position the menu near it
+		const rect = navButton.getBoundingClientRect();
+		navMenu.style.top = `${rect.bottom + 8}px`;
+		navMenu.style.left = `${rect.left}px`;
+
+		// Toggle between showing and hiding the menu with animation
+		if (navMenu.classList.contains("scale-0")) {
+			navMenu.classList.remove("scale-0", "opacity-0");
+			navMenu.classList.add("scale-100", "opacity-100");
+		} else {
+			navMenu.classList.remove("scale-100", "opacity-100");
+			navMenu.classList.add("scale-0", "opacity-0");
+		}
+	});
+}
