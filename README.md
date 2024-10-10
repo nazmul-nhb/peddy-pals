@@ -91,7 +91,7 @@ Peddy Pals is a user-friendly platform designed for browsing and adopting pets f
 
 ## 🛠 Challenges and Solutions
 
-1. **Handling Null or Undefined Data**: For fields like breed or birth date, if the API response contains null values, placeholders such as "Unknown" or "Not Available" are displayed instead of leaving the fields blank.
+1. **Handling Null or Undefined Data**: For fields like breed or birth date, if the API response contains null values, placeholders such as "Unknown" or "Negotiable" are displayed instead of leaving the fields blank.
 
 2. **Local Storage for Likes**: Ensuring the liked pets' data is saved in local storage was crucial for persisting user preferences across sessions.
 

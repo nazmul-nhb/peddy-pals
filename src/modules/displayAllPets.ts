@@ -84,18 +84,26 @@ export const displayAllPets = (pets: IPet[]) => {
 						</figure>
 						<h4 class="font-bold text-xl">${pet_name}</h4>
 						<div class="text-gray-500 space-y-2">
-							<h5 class="flex items-center gap-2"><i class="fa-solid fa-paw"></i> <span>Breed: ${
-								breed || "Unknown"
-							}</span></h5>
-							<h5 class="flex items-center gap-2"><i class="fa-solid fa-cake-candles"></i> <span>Birth: ${
-								date_of_birth
-									? new Date(date_of_birth).toDateString()
-									: "Unknown"
-							}</span></h5>
-							<h5 class="flex items-center gap-2"><i class="fa-solid fa-mercury"></i> <span>Gender: ${gender}</span></h5>
-							<h5 class="flex items-center gap-2"><i class="fa-solid fa-dollar-sign"></i> <span>Price: ${
-								price || "Negotiable"
-							}</span></h5>
+							<h5 class="flex items-center gap-2">
+								<i class="fa-solid fa-paw"></i> 
+								<span>Breed: ${breed || "Unknown"}</span>
+							</h5>
+							<h5 class="flex items-center gap-2">
+								<i class="fa-solid fa-cake-candles"></i> 
+								<span>Birth: ${
+									date_of_birth
+										? new Date(date_of_birth).toDateString()
+										: "Unknown"
+								}</span>
+							</h5>
+							<h5 class="flex items-center gap-2">
+								<i class="fa-solid fa-mercury"></i> 
+								<span>Gender: ${gender || "Unknown"}</span>
+							</h5>
+							<h5 class="flex items-center gap-2">
+								<i class="fa-solid fa-dollar-sign"></i>
+								<span>Price: ${price || "Negotiable"}</span>
+							</h5>
 						</div>
 						<hr/>
 						<div class="flex justify-around items-center">

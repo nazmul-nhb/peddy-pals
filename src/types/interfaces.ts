@@ -8,15 +8,15 @@ export interface ICategory {
 
 export interface IPet {
 	petId: number;
+	pet_name: string;
 	breed?: string;
 	category: TCategory;
 	date_of_birth?: string | null;
-	price: number;
+	price?: number | null;
 	image: string;
-	gender: "Male" | "Female";
+	gender?: "Male" | "Female" | null;
 	pet_details: string;
 	vaccinated_status?: "Fully" | "Partially" | "Not" | null;
-	pet_name: string;
 }
 
 export interface IPetsRes {
