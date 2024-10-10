@@ -90,11 +90,9 @@ export const displayAllPets = (pets: IPet[]) => {
 							</h5>
 							<h5 class="flex items-center gap-2">
 								<i class="fa-solid fa-cake-candles"></i> 
-								<span>Birth: ${
-									date_of_birth
-										? new Date(date_of_birth).toDateString()
-										: "Unknown"
-								}</span>
+								<span>
+									Birth: ${date_of_birth ? new Date(date_of_birth).toDateString() : "Unknown"}
+								</span>
 							</h5>
 							<h5 class="flex items-center gap-2">
 								<i class="fa-solid fa-mercury"></i> 
@@ -154,7 +152,7 @@ export const displayAllPets = (pets: IPet[]) => {
 							clearInterval(countDownInterval);
 							adoptButton.innerText = "Adopted";
 							displayAdoptionMsg(petId, pet_name);
-							toastr.success(`You Adopted ${pet_name}!`);
+							toastr.success(`You Have Adopted ${pet_name}!`);
 							adoptButton.setAttribute("disabled", "true");
 						}
 					}, 1000);
