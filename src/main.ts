@@ -42,9 +42,9 @@ if (navMenu && navButton) {
 		// Toggle between showing and hiding the menu with animation
 		if (navMenu.classList.contains("scale-0")) {
 			navMenu.classList.remove("scale-0", "opacity-0");
-			navMenu.classList.add("scale-100", "opacity-100");
+			navMenu.classList.add("scale-100", "opacity-100", "text-white");
 		} else {
-			navMenu.classList.remove("scale-100", "opacity-100");
+			navMenu.classList.remove("scale-100", "opacity-100", "text-white");
 			navMenu.classList.add("scale-0", "opacity-0");
 		}
 

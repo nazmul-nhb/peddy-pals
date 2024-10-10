@@ -13,7 +13,7 @@ html {
 .modal {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 100;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -26,7 +26,7 @@ html {
 .modal-content {
 	position: relative;
 	top: 0;
-	max-height: 75vh;
+	max-height: 70vh;
 	margin: 8px;
 	box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
 	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
