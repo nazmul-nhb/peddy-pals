@@ -32,6 +32,12 @@ Peddy Pals is a user-friendly platform designed for browsing and adopting pets f
 5. **Fully Responsive Design**:
    - The entire platform is optimized for desktop, tablet, and mobile devices, ensuring a smooth experience regardless of screen size.
 
+6. **Custom Mobile Navbar**:
+   - A custom, pop-out navbar specifically for mobile view, activated by tapping a three-dot icon in the top-left corner beside site logo.
+   - The pop-out menu slides in and out, displaying links to different sections and user actions for easy navigation on smaller screens.
+
+---
+
 ## ⚙️ ES6+ Features Used
 
 - **Array Methods**: Array methods such as `map()`, `filter()`, `sort()`, `forEach()`, `find()`, `reduce()` etc. are used throughout the project for dynamically rendering pet cards, filtering pets by category, sorting them by price, attaching event listeners, finding specific pets by ID, and for other purpose.
