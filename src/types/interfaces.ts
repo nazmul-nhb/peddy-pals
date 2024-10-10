@@ -12,7 +12,7 @@ export interface IPet {
 	breed?: string;
 	category: TCategory;
 	date_of_birth?: string | null;
-	price?: number | null;
+	price: number;
 	image: string;
 	gender?: "Male" | "Female" | null;
 	pet_details: string;
