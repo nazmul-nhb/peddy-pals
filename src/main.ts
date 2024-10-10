@@ -32,10 +32,11 @@ const navMenu = getElementById("nav-menu");
 const navButton = getElementById("nav-button");
 
 if (navMenu && navButton) {
-	navButton.addEventListener("click", () => {
+	// Toggle the menu on button click
+	navButton.addEventListener("click", (e: MouseEvent) => {
 		// Get button coordinates to position the menu near it
 		const rect = navButton.getBoundingClientRect();
-		navMenu.style.top = `${rect.bottom + 8}px`;
+		navMenu.style.top = `${rect.bottom + 8}px`; // Adjust menu positioning
 		navMenu.style.left = `${rect.left}px`;
 
 		// Toggle between showing and hiding the menu with animation
@@ -45,6 +46,25 @@ if (navMenu && navButton) {
 		} else {
 			navMenu.classList.remove("scale-100", "opacity-100");
 			navMenu.classList.add("scale-0", "opacity-0");
+		}
+
+		// Prevent immediate closing if click is on navButton
+		e.stopPropagation();
+	});
+
+	// Hide the menu when clicking outside of it
+	window.addEventListener("click", (e: MouseEvent) => {
+		// Check if the click is outside the navMenu
+		if (!navMenu.contains(e.target as Node)) {
+			// Hide the menu if it is open
+			if (navMenu.classList.contains("scale-100")) {
+				navMenu.classList.remove(
+					"scale-100",
+					"opacity-100",
+					"text-white"
+				);
+				navMenu.classList.add("scale-0", "opacity-0");
+			}
 		}
 	});
 }
