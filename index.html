@@ -6,10 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Peddy Pals</title>
 	</head>
-	<body class="w-full max-w-[1920px] p-8 mx-auto font-sourceSans">
+	<body class="w-full max-w-[1920px] mx-auto font-sourceSans">
 		<!-- Header -->
 		<header>
-			<nav class="flex items-center justify-between gap-6 relative">
+			<nav class="flex items-center justify-between gap-6 relative p-8">
 				<figure class="flex items-center gap-2">
 					<img
 						class="w-7 h-6"
@@ -38,7 +38,7 @@
 		</header>
 
 		<!-- Main Contents -->
-		<main class="">
+		<main class="p-8">
 			<!-- Banner Section -->
 			<section class="text-center space-y-4 my-8">
 				<h3 class="text-2xl font-semibold text-gray-700">
@@ -136,6 +136,105 @@
 				></div>
 			</div>
 		</main>
+
+		<!-- Footer Section -->
+		<footer
+			id="footer"
+			class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left justify-around gap-6 bg-black text-white p-12 mt-8"
+		>
+			<!-- Contacts -->
+			<div class="space-y-1 text-gray-200">
+				<figure class="flex items-center justify-center lg:justify-start gap-2 mb-3">
+					<img
+						class="w-7 h-6"
+						src="./src/assets/logo.webp"
+						alt="Peddy Pals Logo"
+					/>
+					<h1 class="text-2xl md:text-3xl text-white font-bold">
+						Peddy Pals
+					</h1>
+				</figure>
+				<h4 class="">S.S. Road, Sirajganj, Bangladesh</h4>
+				<h4>
+					Phone:
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="tel:+8801623732187"
+						>+880 1623 732 187</a
+					>
+				</h4>
+				<h4>
+					Email:
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="mailto:nazmulnhb@gmail.com"
+						>nazmulnhb@gmail.com</a
+					>
+				</h4>
+				<h4 class="">Opening Hours: 9:00 AM - 5:00 PM</h4>
+			</div>
+			<!-- Useful Links -->
+			<div class="text-gray-300 space-y-1">
+				<h3 class="text-white text-xl font-bold mb-3">Useful Links</h3>
+				<h4>
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="#"
+						>Home</a
+					>
+				</h4>
+				<h4>
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="#"
+						>About Us</a
+					>
+				</h4>
+				<h4>
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="#best-friend"
+						>Animals</a
+					>
+				</h4>
+				<h4>
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="#"
+						>Foundation</a
+					>
+				</h4>
+				<h4>
+					<a
+						class="hover:text-peddy-primary/75 transition-all duration-500"
+						href="#"
+						>Contact</a
+					>
+				</h4>
+			</div>
+			<div class="text-gray-300 space-y-1">
+				<h3 class="text-white text-xl font-bold mb-4">
+					Subscribe to Our Newsletter
+				</h3>
+				<form class="flex flex-col gap-4">
+					<input
+						class="bg-gray-800 py-2 px-4 focus:outline-none rounded-lg"
+						type="email"
+						name="email"
+						id="email"
+						required
+						placeholder="Enter your email"
+					/>
+					<button
+						id="subscribe"
+						class="bg-peddy-primary border border-peddy-primary text-white hover:bg-peddy-primary/20 hover:text-peddy-primary px-4 py-2 inline-block rounded-xl text-lg font-semibold transition-all duration-500"
+						type="submit"
+					>
+						Subscribe
+					</button>
+				</form>
+			</div>
+		</footer>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>
